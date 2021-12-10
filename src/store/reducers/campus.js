@@ -11,6 +11,7 @@ const campus = (state = initialState, action) => {
     default:
       return state;
   }
+  
 };
 
 export default campus;
