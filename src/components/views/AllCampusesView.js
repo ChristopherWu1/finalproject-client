@@ -5,7 +5,8 @@ const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
     return <div>There are no campuses.</div>;
   }
-
+//<p>{campus.description}</p>
+//<button onClick={() => deleteCampus(campus.id)}>Delete</button>
   return (
     <div>
       {props.allCampuses.map((campus) => (
@@ -13,9 +14,16 @@ const AllCampusesView = (props) => {
           <Link to={`/campus/${campus.id}`}>
             <h1>{campus.name}</h1>
           </Link>
-          <p>{campus.description}</p>
+          <img src = {campus.imageUrl}></img>
+          <br />
+          <button onClick={() => props.deleteCampus(campus.id)}>Delete</button> 
+          <br />
         </div>
       ))}
+
+      <Link to={`/`}>
+            <h1>Home</h1>
+      </Link>
     </div>
   );
 };
