@@ -24,9 +24,18 @@ const AllStudentsView = (props) => {
             <h1>{name}</h1>
             
           </Link>
-          <img src = {student.img}/>
+          <img src = {student.imageUrl}/>
           <p>{student.email}</p>
           <p>{student.gpa}</p>
+          
+          {student.campus ?
+          
+        <p>Goes to <Link to={`/campus/${student.campus.id}`}> {student.campus.name} </Link></p>
+        
+      
+      : 
+      <p>This student is not currently enrolled at a school.</p>}
+
           <button onClick={() => deleteStudent(student.id)}>Delete</button>
           </div>
         );
