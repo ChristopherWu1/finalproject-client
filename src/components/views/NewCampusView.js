@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -32,38 +31,16 @@ const useStyles = makeStyles( () => ({
   
 }));
 
-const CampusView = (props) => {
-  const {handleChange, handleSubmit, campus } = props;
-  const classes = useStyles();
-  return (
-    <div>      
-      <h1>{campus.name}</h1>
-      <p>{campus.address}</p>
-      <img src = {campus.imageUrl} />
-      <p>{campus.description}</p>
-      <ul>
-      <div>
-      {campus.students.length !== 0 ? 
-      campus.students.map( student => {
-        let name = student.firstname + " " + student.lastname;
-        return (
-          <Link to={`/student/${student.id}`}>
-          <li key={student.id}>{name}</li>
-          </Link>
-        );
-      })
-      : 
-      <p>There are no students enrolled at {campus.name}</p>}
-      
-    
-    </div>
-    
-      </ul>
+const NewCampusView = (props) => {
+    const {handleChange, handleSubmit } = props;
+    const classes = useStyles();
+  
+    return (
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Edit Campus
+              New Campus
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
@@ -90,9 +67,7 @@ const CampusView = (props) => {
           </form>
           </div>
         </div>
-    </div>
-  );
-
-};
-
-export default CampusView;
+      
+    )
+  }
+  export default NewCampusView;

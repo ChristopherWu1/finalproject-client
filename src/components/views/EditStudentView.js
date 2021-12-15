@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -31,24 +30,12 @@ const useStyles = makeStyles( () => ({
   },
   
 }));
+const EditStudentView = (props) => {
 
-const StudentView = (props) => {
-  const {handleChange, handleSubmit, student } = props;
-  const classes = useStyles();
-  return (
-    <div>
-      <h1>{student.firstname + " " + student.lastname}</h1>
-      <img src = {student.imageUrl}/>
-      <p>{student.email}</p>
-      <p>{student.gpa}</p>
-          
-      {student.campus ? 
-      <p>Goes to <Link to={`/campus/${student.campus.id}`}> {student.campus.name} </Link></p>:
-      <p>This student is not currently enrolled at a school.</p>}
-      
-      <Link to={`/editstudent/${student.id}`}> Edit Student </Link>
+    const {handleChange, handleSubmit,student } = props;
+    const classes = useStyles();
 
-      <div className={classes.root}>
+    return(<div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
@@ -82,10 +69,9 @@ const StudentView = (props) => {
             <br/>
           </form>
           </div>
-        </div>    
-    </div>
-  );
+        </div>)
+    
+    
 
-};
-
-export default StudentView;
+}
+export default EditStudentView;
