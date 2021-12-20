@@ -7,5 +7,5 @@ export { default as NewCampusContainer } from "./NewCampusContainer";
 
 export { default as AllStudentsContainer } from "./AllStudentsContainer";
 export { default as StudentContainer } from "./StudentContainer";
-export { default as EditStudentContainer } from "./EditStudentContainer";
+
 export { default as NewStudentContainer } from "./NewStudentContainer";

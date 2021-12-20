@@ -36,6 +36,7 @@ class NewStudentContainer extends Component {
         };
         
         let newStudent = await this.props.addStudent(student);
+        
 
         this.setState({
           firstname: "", 

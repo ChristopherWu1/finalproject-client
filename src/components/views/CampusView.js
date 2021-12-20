@@ -59,6 +59,9 @@ const CampusView = (props) => {
     </div>
     
       </ul>
+      <Link to={`/campuses`}>
+            <p>Back to all campuses</p>
+      </Link>
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>

@@ -83,7 +83,7 @@ componentWillUnmount() {
   render() {
     if(this.state.redirect) {
       console.log(this.state.id);
-      return (<Redirect to={`/student/${this.state.id}`}/>)
+      return (<Redirect to={`/students`}/>)
     }
     return (
       <StudentView 

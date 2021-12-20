@@ -46,7 +46,9 @@ const StudentView = (props) => {
       <p>Goes to <Link to={`/campus/${student.campus.id}`}> {student.campus.name} </Link></p>:
       <p>This student is not currently enrolled at a school.</p>}
       
-      <Link to={`/editstudent/${student.id}`}> Edit Student </Link>
+      <Link to={`/students`}>
+            <p>Back to all Students</p>
+      </Link>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
